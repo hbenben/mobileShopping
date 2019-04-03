@@ -34,6 +34,12 @@ function productList(){
     dataType:'json',
     success:function(result){
       console.log(result);
+      //通过判断获取数据成功返回的状态码，来判断是否加载页面
+      if(result.meta.status==200){
+        var html = template('productTemp', result);
+        $('.product-wrapper').html(html);
+
+      }
     }
   })
 }

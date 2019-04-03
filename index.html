@@ -22,6 +22,28 @@
         </div>
         <!-- 轮播图 -->
         <div class="shop-content">
+            <!-- 产品分类 -->
+            <div class="product-nav">
+                <a href="javascript:;">
+                    <img src="https://image2.suning.cn/uimg/cms/img/155411189774023862.gif?format=_is_120w_120h" alt="">
+                    <div>爆款手机</div>
+                </a>
+                <a href="javascript:;">
+                    <img src="https://image1.suning.cn/uimg/cms/img/154708800857670247.png?format=_is_120w_120h.webp"
+                        alt="">
+                    <div>苏宁超市</div>
+                </a>
+                <a href="javascript:;">
+                    <img src="https://image1.suning.cn/uimg/cms/img/155175138228120594.png?format=_is_120w_120h.webp"
+                        alt="">
+                    <div>生活超市</div>
+                </a>
+                <a href="javascript:;">
+                    <img src="https://image2.suning.cn/uimg/cms/img/154708804944582613.png?format=_is_120w_120h.webp"
+                        alt="">
+                    <div>苏宁生鲜</div>
+                </a>
+            </div>
             <!-- 轮播图的照片 -->
             <div class="mui-slider">
                 <div class="mui-slider-group mui-slider-loop shopping-banner">
@@ -36,45 +58,7 @@
             <div class="shop-product">
                 <!-- 一个完整的分类 -->
                 <div class="product-wrapper clearfix">
-                    <img class="product-title" src="http://image4.suning.cn/uimg/cms/img/149559219946350066.png" alt="">
-                    <ul>
-                        <li>
-                            <a href="javascript:;">
-                                <img src="http://image5.suning.cn/uimg/b2c/newcatentries/0000000000-000000000101822315_2_400x400.jpg"
-                                    alt="">
-                                <div class="goods-nane">买一送一 可移除卡通身高贴纸卡通儿童房装饰品墙贴画</div>
-                                <div class="good-price">￥998</div>
-                            </a>
-                            <a class="mui-btn mui-btn-primary mui-btn-outlined good-like" href="javascript:;">找相似</a>
-                        </li>
-                        <li>
-                            <a href="javascript:;">
-                                <img src="http://image5.suning.cn/uimg/b2c/newcatentries/0000000000-000000000101822315_2_400x400.jpg"
-                                    alt="">
-                                <div class="goods-nane">买一送一 可移除卡通身高贴纸卡通儿童房装饰品墙贴画</div>
-                                <div class="good-price">￥998</div>
-                            </a>
-                            <a class="mui-btn mui-btn-primary mui-btn-outlined good-like" href="javascript:;">找相似</a>
-                        </li>
-                        <li>
-                            <a href="javascript:;">
-                                <img src="http://image5.suning.cn/uimg/b2c/newcatentries/0000000000-000000000101822315_2_400x400.jpg"
-                                    alt="">
-                                <div class="goods-nane">买一送一 可移除卡通身高贴纸卡通儿童房装饰品墙贴画</div>
-                                <div class="good-price">￥998</div>
-                            </a>
-                            <a class="mui-btn mui-btn-primary mui-btn-outlined good-like" href="javascript:;">找相似</a>
-                        </li>
-                        <li>
-                            <a href="javascript:;">
-                                <img src="http://image5.suning.cn/uimg/b2c/newcatentries/0000000000-000000000101822315_2_400x400.jpg"
-                                    alt="">
-                                <div class="goods-nane">买一送一 可移除卡通身高贴纸卡通儿童房装饰品墙贴画</div>
-                                <div class="good-price">￥998</div>
-                            </a>
-                            <a class="mui-btn mui-btn-primary mui-btn-outlined good-like" href="javascript:;">找相似</a>
-                        </li>
-                    </ul>
+
                 </div>
             </div>
 
@@ -105,6 +89,7 @@
     <script src="./lib/zepto/zepto.js"></script>
     <script src="./lib/arttemplate/template-web.js"></script>
     <script src="./js/index.js"></script>
+    <!-- 渲染轮播图照片 -->
     <script type="text/template" id="bannerTemp">
         <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="{{data[data.length-1].image_src}}" /></a>
         </div>
@@ -114,9 +99,29 @@
         <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="{{data[0].image_src}}" /></a></div>
        
     </script>
+    <!-- 渲染轮播图中的点标记 -->
     <script type='text/template' id="indicatorTemp">
         {{each data value index}}
             <div class="mui-indicator index==0?'mui-active':''"></div>
+        {{/each}}
+    </script>
+    <!-- 渲染产品页 -->
+    <script type="text/template" id="productTemp">
+        {{each data value1 index1}}
+        <img class="product-title" src="{{value1.group_img}}" alt="">
+        <ul>
+            {{each value1.goods value2 index2}}
+            <li>
+                <a href="javascript:;">
+                    <img src="{{value2.goods_small_logo}}" alt="">
+                    <div class="goods-name">{{value2.goods_name}}</div>
+                    <div class="goods-price">￥{{value2.goods_price}}</div>
+                </a>
+                <a class="mui-btn mui-btn-primary mui-btn-outlined goods-like" href="javascript:;">找相似</a>
+            </li>
+            {{/each}}
+            
+        </ul>
         {{/each}}
     </script>
 </body>
