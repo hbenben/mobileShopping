@@ -1,14 +1,15 @@
 $(function(){
-  // console.log(111);
   banner()
+  productList()
 })
+// 轮播图的ajax请求
 function banner(){
   $.ajax({
     type:'get',
     url: 'http://157.122.54.189:9094/api/public/v1/home/swiperdata',
     dataType:'json',
     success:function(result){
-      console.log(result);
+      // console.log(result);
       //动态生成轮播图片
       var bannerHTML = template('bannerTemp',result);
       $('.shopping-banner').html(bannerHTML);
@@ -24,4 +25,15 @@ function banner(){
     }
 
   })  
+}
+// 产品的ajax请求
+function productList(){
+  $.ajax({
+    type:'get',
+    url: 'http://157.122.54.189:9094/api/public/v1/home/goodslist',
+    dataType:'json',
+    success:function(result){
+      console.log(result);
+    }
+  })
 }
