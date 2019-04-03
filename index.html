@@ -1,12 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>29-品优购</title>
+    <link rel="stylesheet" href="./lib/mui/css/mui.css">
+    <link rel="stylesheet" href="./lib/mui/fonts/mui.ttf">
+    <link rel="stylesheet" href="./lib/mui/fonts/mui-icons-extra.ttf">
+    <link rel="stylesheet" href="styles/index.css">
+    <title>shopping</title>
 </head>
+
 <body>
-    <div cla></div>
+    <div class="layout">
+        <!-- 头部搜索框 -->
+        <div class="shop-header">
+            <div class="mui-input-row mui-search">
+                <input type="search" class="mui-input-clear" placeholder="">
+            </div>
+        </div>
+        <!-- 轮播图 -->
+        <div class="shop-content">
+            <!-- 轮播图的照片 -->
+            <div class="mui-slider">
+                <div class="mui-slider-group mui-slider-loop shopping-banner">
+
+                </div>
+                <!-- 轮播图的点标记 -->
+                <div class="mui-slider-indicator shopping-banner-indi">
+
+                </div>
+            </div>
+
+        </div>
+        <!-- 底部tab栏 -->
+        <div class="shop-footer">
+            <nav class="mui-bar mui-bar-tab">
+                <a class="mui-tab-item mui-active" href="#tabbar">
+                    <span class="mui-icon mui-icon-home"></span>
+                    <span class="mui-tab-label">首页</span>
+                </a>
+                <a class="mui-tab-item" href="#tabbar-with-chat">
+                    <span class="mui-icon mui-icon-email"></span>
+                    <span class="mui-tab-label">消息</span>
+                </a>
+                <a class="mui-tab-item" href="#tabbar-with-contact">
+                    <span class="mui-icon mui-icon-contact"></span>
+                    <span class="mui-tab-label">通讯录</span>
+                </a>
+                <a class="mui-tab-item" href="#tabbar-with-map">
+                    <span class="mui-icon mui-icon-gear"></span>
+                    <span class="mui-tab-label">设置</span>
+                </a>
+            </nav>
+        </div>
+    </div>
+    <script src="./lib/mui/js/mui.js"></script>
+    <script src="./lib/zepto/zepto.js"></script>
+    <script src="./lib/arttemplate/template-web.js"></script>
+    <script src="./js/index.js"></script>
+    <script type="text/template" id="bannerTemp">
+        <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="{{data[data.length-1].image_src}}" /></a>
+        </div>
+            {{each data as value index}}
+            <div class="mui-slider-item"><a href="#"><img src="{{value.image_src}}" /></a></div>
+            {{/each}}
+        <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="{{data[0].image_src}}" /></a></div>
+       
+    </script>
+    <script type='text/template' id="indicatorTemp">
+        {{each data value index}}
+            <div class="mui-indicator index==0?'mui-active':''"></div>
+        {{/each}}
+    </script>
 </body>
+
 </html>
