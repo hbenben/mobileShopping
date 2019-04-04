@@ -6,7 +6,7 @@ $(function(){
 function banner(){
   $.ajax({
     type:'get',
-    url: 'http://157.122.54.189:9094/api/public/v1/home/swiperdata',
+    url: 'home/swiperdata',
     dataType:'json',
     success:function(result){
       // console.log(result);
@@ -30,10 +30,10 @@ function banner(){
 function productList(){
   $.ajax({
     type:'get',
-    url: 'http://157.122.54.189:9094/api/public/v1/home/goodslist',
+    url: 'home/goodslist',
     dataType:'json',
     success:function(result){
-      console.log(result);
+      // console.log(result);
       //通过判断获取数据成功返回的状态码，来判断是否加载页面
       if(result.meta.status==200){
         var html = template('productTemp', result);

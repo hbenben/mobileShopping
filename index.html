@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./lib/mui/css/mui.css">
-    <link rel="stylesheet" href="./lib/mui/fonts/mui.ttf">
-    <link rel="stylesheet" href="./lib/mui/fonts/mui-icons-extra.ttf">
+    <link rel="stylesheet" href="./lib/mui/css/muie.css">    
     <link rel="stylesheet" href="styles/index.css">
     <title>shopping</title>
 </head>
@@ -71,16 +70,16 @@
                     <span class="mui-tab-label">首页</span>
                 </a>
                 <a class="mui-tab-item" href="#tabbar-with-chat">
-                    <span class="mui-icon mui-icon-email"></span>
-                    <span class="mui-tab-label">消息</span>
+                    <span class="mui-icon  mui-icon-bars"></span>
+                    <span class="mui-tab-label">分类</span>
                 </a>
                 <a class="mui-tab-item" href="#tabbar-with-contact">
-                    <span class="mui-icon mui-icon-contact"></span>
-                    <span class="mui-tab-label">通讯录</span>
+                    <span class=" mui-icon-extra mui-icon-extra-cart" ></span>
+                    <span class="mui-tab-label">购物车</span>
                 </a>
                 <a class="mui-tab-item" href="#tabbar-with-map">
-                    <span class="mui-icon mui-icon-gear"></span>
-                    <span class="mui-tab-label">设置</span>
+                    <span class="mui-icon mui-icon-contact"></span>
+                    <span class="mui-tab-label">我的</span>
                 </a>
             </nav>
         </div>
@@ -88,6 +87,8 @@
     <script src="./lib/mui/js/mui.js"></script>
     <script src="./lib/zepto/zepto.js"></script>
     <script src="./lib/arttemplate/template-web.js"></script>
+    <!-- 通用js,注意路径问题，要放在index前面 -->
+    <script src="./js/common.js"></script>
     <script src="./js/index.js"></script>
     <!-- 渲染轮播图照片 -->
     <script type="text/template" id="bannerTemp">
@@ -114,7 +115,7 @@
             <li>
                 <a href="javascript:;">
                     <img src="{{value2.goods_small_logo}}" alt="">
-                    <div class="goods-name">{{value2.goods_name}}</div>
+                    <div class="goods-name mui-ellipsis-2">{{value2.goods_name}}</div>
                     <div class="goods-price">￥{{value2.goods_price}}</div>
                 </a>
                 <a class="mui-btn mui-btn-primary mui-btn-outlined goods-like" href="javascript:;">找相似</a>
@@ -124,6 +125,7 @@
         </ul>
         {{/each}}
     </script>
+    
 </body>
 
 </html>

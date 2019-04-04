@@ -1,0 +1,22 @@
+.layout {
+  width: 100vw;
+  height: 100vh;
+  max-width: 640px;
+  margin: 0 auto;
+  background-color: #eee;
+  display: flex;
+  flex-direction: column;
+}
+.shop-header {
+  height: 45px;
+  line-height: 45px;
+  background-color: #fff;
+  padding: 0 2px;
+}
+.shop-footer {
+  height: 45px;
+}
+.shop-footer .mui-icon-extra-cart {
+  display: block;
+  margin: 0 auto;
+}

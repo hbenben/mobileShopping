@@ -106,6 +106,13 @@ ul {
   background-color: #fff;
   padding: 0 2px;
 }
+.shop-footer {
+  height: 45px;
+}
+.shop-footer .mui-icon-extra-cart {
+  display: block;
+  margin: 0 auto;
+}
 .shop-content {
   overflow: scroll;
   flex: 1;
@@ -152,7 +159,7 @@ ul {
 .shop-content .shop-product .product-wrapper > ul > li .goods-name {
   font-size: 14px;
   color: #000;
-  height: 42px;
+  height: 40px;
 }
 .shop-content .shop-product .product-wrapper > ul > li .goods-price {
   color: red;
@@ -168,7 +175,4 @@ ul {
 .shop-content .shop-product .product-wrapper > ul > li img {
   display: block;
   width: 100%;
-}
-.shop-footer {
-  height: 45px;
 }
