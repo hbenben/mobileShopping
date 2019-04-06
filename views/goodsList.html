@@ -7,34 +7,46 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="../lib/mui/css/mui.css">
   <link rel="stylesheet" href="../lib/mui/css/muie.css">
-  <link rel="stylesheet" href="../styles/common.css">
-  <link rel="stylesheet" href="../lib/fontawesome/css/font-awesome.css">
-  <link rel="stylesheet" href="../styles/category.css">
-  <title>shopping</title>
+  <link rel="stylesheet" href="../styles/goodsListDetail.css">
+  <title>goodsList</title>
 </head>
 
 <body>
   <div class="layout">
-    <!-- 头部搜索框 -->
-    <div class="shop-header">
-      <div class="mui-input-row mui-search">
-        <input type="search" class="mui-input-clear" placeholder="">
-      </div>
-    </div>
+    <!-- 商品分类页面 -->
+    <div class="goodsListDetail">
 
-    <!-- 分类页面中的内容 -->
-    <div class="shopCateList">
-      <!-- 左边的目录 -->
-      <div class="left">
-        <ul>
-
-        </ul>
-      </div>
-      <div class="right">
-        <div class="rightList">
-          
+      <!-- 侧滑导航根容器 -->
+      <div class="mui-off-canvas-wrap mui-draggable">
+        <!-- 主页面容器 -->
+        <div class="mui-inner-wrap">
+          <!-- 菜单容器 -->
+          <aside class="mui-off-canvas-left">
+            <div class="mui-scroll-wrapper">
+              <div class="mui-scroll">
+                
+              </div>
+            </div>
+          </aside>
+          <!-- 主页面标题 -->
+          <header id="header" class="mui-bar mui-bar-nav">
+            <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" href="./category.html"></a>
+            <h1 class="mui-title">商品列表</h1>
+            <a class="mui-icon mui-icon-search mui-pull-right"></a>
+          </header>
+          <!-- 主页面内容容器 -->
+          <div class="mui-content mui-scroll-wrapper">
+            <div class="mui-scroll">
+              <!-- 主界面具体展示内容 -->
+              <ul>
+                
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
+
+
     </div>
 
     <!-- 底部tab栏 -->
@@ -65,30 +77,13 @@
   <script src="../lib/arttemplate/template-web.js"></script>
   <!-- 通用js,注意路径问题，要放在index前面 -->
   <script src="../js/common.js"></script>
-  <script src="../js/category.js"></script>
-  <script type='text/template' id="leftnavTemp">
-    {{each list value index}}
-      <li class="{{index==0?'active':''}}">
-        <a href="#" data-id='{{value.cat_id}}'>{{value.cat_name}}</a>
-      </li>
-    {{/each}}
-  </script>
-  <script type='text/template' id="rightListTemp">
-    {{each children value1 index1}}
-    <div class="cate2">
-      <div class="cate2_title">{{value1.cat_name}}</div>
-      <div class="cate2_content">
-        {{each value1.children value2 index2}}
-        <a href="goods_list.html?cid={{value2.cat_id}}">
-          <img src="http://157.122.54.189:9094{{value2.cat_icon}}" alt="">
-          <span>{{value2.cat_name}}</span>
-        </a>
-        {{/each}}
-      </div>
-    </div>
-    {{/each}}
-  </script>
+
 
 </body>
 
 </html>
+<!-- <header id="header" class="mui-bar mui-bar-nav">
+   <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+   <h1 class="mui-title">商品列表</h1>
+   <a class="mui-icon mui-icon-search mui-pull-right"></a>
+ </header> -->

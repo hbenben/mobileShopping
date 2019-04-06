@@ -1,0 +1,126 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+ol,
+ul {
+  list-style: none;
+}
+.layout {
+  width: 100vw;
+  height: 100vh;
+  max-width: 640px;
+  margin: 0 auto;
+  background-color: #eee;
+  display: flex;
+  flex-direction: column;
+}
+.shop-header {
+  height: 45px;
+  line-height: 45px;
+  background-color: #fff;
+  padding: 0 2px;
+}
+.shop-footer {
+  height: 45px;
+}
+.shop-footer .mui-icon-extra-cart {
+  display: block;
+  margin: 0 auto;
+}
+.layout .goodsListDetail {
+  flex: 1;
+}
+.layout .goodsListDetail #header {
+  background-color: #0094FF;
+  padding: 0;
+}
+.layout .goodsListDetail #header .mui-icon {
+  color: #fff;
+  font-weight: bold;
+}

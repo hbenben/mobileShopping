@@ -19,4 +19,9 @@ $(function(){
     e.preventDefault()
     window.top.location.href = this.href;
   });
+  // complete：请求完成时触发
+  $.ajaxSettings.complete = function () {
+    // 在这边我们想拼接url
+    $('body').removeClass('loadding')
+  }
 })
