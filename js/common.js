@@ -13,6 +13,8 @@ $(function(){
   }
 
   //mui中的点击事件，不使用click而是自己封装tap
+  // // 默认情况 下，mui不响应click单击事件，这是它的默认行为
+  // 我们解决方式就是重新为所有A绑定tap
   mui('body').on('tap', 'a', function (e) {
     e.preventDefault()
     window.top.location.href = this.href;
