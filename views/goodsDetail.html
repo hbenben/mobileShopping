@@ -21,7 +21,12 @@
 
     <!-- 商品详情的轮播图，到时候，是这一整个进行渲染 -->
     <div class="pyg_content">
-     
+      <div class="mui-scroll-wrapper">
+        <div class="mui-scroll">
+          <!-- 这里是动态生成数据，商品详情页 -->
+       
+        </div>
+      </div>
 
 
     </div>
@@ -54,31 +59,40 @@
   <!-- 通用js,注意路径问题，要放在index前面 -->
   <script src="../js/common.js"></script>
   <script src="../js/goodsDetail.js"></script>
-  <!-- 动态渲染商品详情页面 -->
+
+  <!-- 动态生成商品详情数据 -->
   <script type="text/template" id="goodsDetailTemp">
-     <div class="mui-scroll-wrapper">
-        <div class="mui-scroll">
-          <div class="mui-slider">
+    <!-- 这里是轮播图渲染 -->
+       <div class="mui-slider">
             <div class="mui-slider-group mui-slider-loop">
-              <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="4.jpg" /></a></div>
-              <div class="mui-slider-item"><a href="#"><img src="../static/images/123.png" /></a></div>
-              <div class="mui-slider-item"><a href="#"><img src="../static/images/123.png" /></a></div>
-              <div class="mui-slider-item"><a href="#"><img src="../static/images/123.png" /></a></div>
-              <div class="mui-slider-item"><a href="#"><img src="../static/images/123.png" /></a></div>
-              <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="1.jpg" /></a></div>
+              
+              <div class="mui-slider-item mui-slider-item-duplicate">
+                <a href="#">
+                  <img src="{{pics.length>0?pics[pics.length-1].pics_mid_url:''}}" /></a>
+                </div>
+              {{each pics value index}}
+              <div class="mui-slider-item">
+                <a href="#">
+                  <img src="{{value.pics_mid_url}}" />
+                </a></div>
+              {{/each}}
+              <div class="mui-slider-item mui-slider-item-duplicate">
+                <a href="#"><img src="{{pics.length>0?pics[0].pics_mid_url:''}}" />
+                </a>
+              </div>
             </div>
+           
             <div class="mui-slider-indicator">
-              <div class="mui-indicator mui-active"></div>
-              <div class="mui-indicator"></div>
-              <div class="mui-indicator"></div>
-              <div class="mui-indicator"></div>
+              {{each pics value index}}
+              <div class="mui-indicator {{index==0?'mui-active':''}}"></div>
+              {{/each}}
             </div>
           </div>
           <div class="goods_name">
-            海信(Hisense)LED55MU9600X3DUC 55英寸 4K超高清量子点电视 ULED画质 VIDAA系统
+            {{goods_name}}
           </div>
           <div class="goods_price">
-            ￥13999
+            ￥{{goods_price}}
           </div>
           <ul class="goods_post_intro">
             <li>
@@ -96,51 +110,37 @@
 
             </li>
           </ul>
-        <div class="mui-content">
-          <div style="padding: 10px 10px;">
-            <div id="segmentedControl" class="mui-segmented-control">
-              <a class="mui-control-item mui-active" href="#item1">
-                图文详情
+          <div class="mui-content">
+            <div style="padding: 10px 10px;">
+              <div id="segmentedControl" class="mui-segmented-control">
+                <a class="mui-control-item mui-active" href="#item1">
+                  图文详情
                 </a>
-              <a class="mui-control-item" href="#item2">
-                规格参数
+                <a class="mui-control-item" href="#item2">
+                  规格参数
                 </a>
 
+              </div>
             </div>
-          </div>
-          <div>
-            <div id="item1" class="mui-control-content mui-active">
-              图文详情内容
+            <div>
+              <div id="item1" class="mui-control-content mui-active">
+                <!-- 这里使用template的@解析html代码 -->
+                {{@goods_introduce}}
               </div>
-            <div id="item2" class="mui-control-content">
+              <div id="item2" class="mui-control-content">
+            {{each attrs value index}}
               <div>
-                <h3>主题</h3>
-                <div>
-                  <span>商品名称</span>
-                  <span>海信电视</span>
-                </div>
+                  <h3>{{value.attr_name.split('-')[0]}}</h3>
+                  <div>
+                      <span>{{value.attr_name.split('-')[1]}}</span>
+                      <span>{{value.attr_value}}</span>
+                  </div>
               </div>
-              <div>
-                <h3>主题</h3>
-                <div>
-                  <span>商品名称</span>
-                  <span>海信电视</span>
-                </div>
-              </div>
-              <div>
-                <h3>主题</h3>
-                <div>
-                  <span>商品名称</span>
-                  <span>海信电视</span>
-                </div>
-              </div>
+              {{/each}}
+
             </div>
 
           </div>
-
-        </div>
-      </div>
-      </div >
   </script>
 
 </body>

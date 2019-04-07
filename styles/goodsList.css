@@ -148,6 +148,15 @@ ul {
   top: 45px;
   bottom: 10px;
 }
+.layout .pyg_content .goods_name {
+  padding: 5px 10px;
+  font-size: 15px;
+}
+.layout .pyg_content .goods_price {
+  padding: 10px;
+  font-size: 18px;
+  color: orange;
+}
 .layout .shop-footer .pyg_buy {
   background-color: #f0ad4e;
   color: #fff;
