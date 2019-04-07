@@ -10,9 +10,19 @@ $(function () {
     deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
   });
 
-  // 发送ajax请求
+  var test=$.getParameter(location.search);
+  console.log(test);
+  
+  // 发送ajax请求,要注意要从前端传入必须的数据商品的id
   $.ajax({
-    
+    type:'get',
+    url: 'goods/detail',
+    dataType:'json',
+    data: $.getParameter(location.search),  //调用自定义方法，实现从url获取商品列表页的id
+    success:function(result){
+      // console.log(result);
+      
+    }
   })
 
 })
