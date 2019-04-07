@@ -1,0 +1,30 @@
+@import '_reset.less';
+@import 'common.less';
+.layout{
+  .detailHeader{
+    height: 45px;
+  }
+  .pyg_content{
+    overflow: hidden;
+    // padding-top: 45px;
+    position: relative;
+    flex: 1;
+     .mui-scroll-wrapper {
+       //区域滚动手动设置样式
+       top: 45px;
+       bottom: 10px;
+     }
+
+  }
+  //底部的样式
+  .shop-footer{
+    .pyg_buy{
+      background-color: #f0ad4e;
+      color: #fff;
+    }
+    .pyg_cart{
+      background-color: #dd524d;
+      color: #fff;
+    }
+  }
+}
