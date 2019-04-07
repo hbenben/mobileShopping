@@ -4,15 +4,68 @@
 .layout {
   .goodsListDetail {
     flex: 1;
-    // height: auto;
-   #header {
-     background-color: #0094FF;
-     padding: 0;
 
-     .mui-icon {
-       color: #fff;
-       font-weight: bold;
-     }
-   }
+    // height: auto;
+    #header {
+      background-color: #0094FF;
+      padding: 0;
+
+      .mui-icon {
+        color: #fff;
+        font-weight: bold;
+      }
+    }
+
+    .goods_wrap {
+      a {
+        background-color: #fff;
+        margin-bottom: 5px;
+        display: flex;
+        color: #333;
+        .item_left {
+          flex: 1;
+
+          >img {
+            width: 70%;
+            display: block;
+            margin: 0 auto;
+
+          }
+        }
+
+        .item_right {
+          //不弄的话，会导致撑开一整行
+          overflow: hidden;
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          .good_price{
+            color: red;
+          }
+        }
+      }
+    }
+
+    //搜索框
+    .search_wrapper{
+      background-color: #ccc;
+      .search_bar{
+        display: flex;
+        padding: 5px;
+        height: 40px;
+        >input{
+          height: 100%;
+          border-radius: 0;
+          flex: 3;
+        }
+        >button {
+          background-color: #0094ff;
+          border-radius: 0;
+          border: none;
+          flex: 1;
+        }
+      }
+    }
   }
 }
