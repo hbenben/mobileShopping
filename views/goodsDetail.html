@@ -21,103 +21,7 @@
 
     <!-- 商品详情的轮播图，到时候，是这一整个进行渲染 -->
     <div class="pyg_content">
-      <!-- 区域滚动 -->
-      <div class="mui-scroll-wrapper">
-        <div class="mui-scroll">
-          <!--这里放置真实显示的DOM内容-->
-          <div class="mui-slider">
-            <div class="mui-slider-group mui-slider-loop">
-              <!--支持循环，需要重复图片节点-->
-              <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="4.jpg" /></a></div>
-              <div class="mui-slider-item"><a href="#"><img src="../static/images/123.png" /></a></div>
-              <div class="mui-slider-item"><a href="#"><img src="../static/images/123.png" /></a></div>
-              <div class="mui-slider-item"><a href="#"><img src="../static/images/123.png" /></a></div>
-              <div class="mui-slider-item"><a href="#"><img src="../static/images/123.png" /></a></div>
-              <!--支持循环，需要重复图片节点-->
-              <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="1.jpg" /></a></div>
-            </div>
-            <!-- 点标记 -->
-            <div class="mui-slider-indicator">
-              <div class="mui-indicator mui-active"></div>
-              <div class="mui-indicator"></div>
-              <div class="mui-indicator"></div>
-              <div class="mui-indicator"></div>
-            </div>
-          </div>
-
-          <!-- 商品名称 -->
-          <div class="goods_name">
-            海信(Hisense)LED55MU9600X3DUC 55英寸 4K超高清量子点电视 ULED画质 VIDAA系统
-          </div>
-          <!-- 商品价格 -->
-          <div class="goods_price">
-            ￥13999
-          </div>
-          <!-- 用户提交过来的信息 -->
-          <ul class="goods_post_intro">
-            <li>
-              <span>已选</span>
-              <span>白色</span>
-            </li>
-            <li>
-              <span>已选</span>
-              <span>白色</span>
-            </li>
-            <li>
-              <span>已选</span>
-              <span>白色</span>
-            </li>
-
-            </li>
-          </ul>
-          <!-- 选项卡 -->
-          <div class="mui-content">
-            <!-- 选项卡标题 -->
-            <div style="padding: 10px 10px;">
-              <div id="segmentedControl" class="mui-segmented-control">
-                <a class="mui-control-item mui-active" href="#item1">
-                  图文详情
-                </a>
-                <a class="mui-control-item" href="#item2">
-                  规格参数
-                </a>
-
-              </div>
-            </div>
-            <!-- 对应选项卡内容 -->
-            <div>
-              <div id="item1" class="mui-control-content mui-active">
-                图文详情内容
-              </div>
-              <div id="item2" class="mui-control-content">
-                <div>
-                  <h3>主题</h3>
-                  <div>
-                    <span>商品名称</span>
-                    <span>海信电视</span>
-                  </div>
-                </div>
-                <div>
-                  <h3>主题</h3>
-                  <div>
-                    <span>商品名称</span>
-                    <span>海信电视</span>
-                  </div>
-                </div>
-                <div>
-                  <h3>主题</h3>
-                  <div>
-                    <span>商品名称</span>
-                    <span>海信电视</span>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-        </div>
-      </div>
+     
 
 
     </div>
@@ -150,7 +54,94 @@
   <!-- 通用js,注意路径问题，要放在index前面 -->
   <script src="../js/common.js"></script>
   <script src="../js/goodsDetail.js"></script>
+  <!-- 动态渲染商品详情页面 -->
+  <script type="text/template" id="goodsDetailTemp">
+     <div class="mui-scroll-wrapper">
+        <div class="mui-scroll">
+          <div class="mui-slider">
+            <div class="mui-slider-group mui-slider-loop">
+              <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="4.jpg" /></a></div>
+              <div class="mui-slider-item"><a href="#"><img src="../static/images/123.png" /></a></div>
+              <div class="mui-slider-item"><a href="#"><img src="../static/images/123.png" /></a></div>
+              <div class="mui-slider-item"><a href="#"><img src="../static/images/123.png" /></a></div>
+              <div class="mui-slider-item"><a href="#"><img src="../static/images/123.png" /></a></div>
+              <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="1.jpg" /></a></div>
+            </div>
+            <div class="mui-slider-indicator">
+              <div class="mui-indicator mui-active"></div>
+              <div class="mui-indicator"></div>
+              <div class="mui-indicator"></div>
+              <div class="mui-indicator"></div>
+            </div>
+          </div>
+          <div class="goods_name">
+            海信(Hisense)LED55MU9600X3DUC 55英寸 4K超高清量子点电视 ULED画质 VIDAA系统
+          </div>
+          <div class="goods_price">
+            ￥13999
+          </div>
+          <ul class="goods_post_intro">
+            <li>
+              <span>已选</span>
+              <span>白色</span>
+            </li>
+            <li>
+              <span>已选</span>
+              <span>白色</span>
+            </li>
+            <li>
+              <span>已选</span>
+              <span>白色</span>
+            </li>
 
+            </li>
+          </ul>
+        <div class="mui-content">
+          <div style="padding: 10px 10px;">
+            <div id="segmentedControl" class="mui-segmented-control">
+              <a class="mui-control-item mui-active" href="#item1">
+                图文详情
+                </a>
+              <a class="mui-control-item" href="#item2">
+                规格参数
+                </a>
+
+            </div>
+          </div>
+          <div>
+            <div id="item1" class="mui-control-content mui-active">
+              图文详情内容
+              </div>
+            <div id="item2" class="mui-control-content">
+              <div>
+                <h3>主题</h3>
+                <div>
+                  <span>商品名称</span>
+                  <span>海信电视</span>
+                </div>
+              </div>
+              <div>
+                <h3>主题</h3>
+                <div>
+                  <span>商品名称</span>
+                  <span>海信电视</span>
+                </div>
+              </div>
+              <div>
+                <h3>主题</h3>
+                <div>
+                  <span>商品名称</span>
+                  <span>海信电视</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+      </div >
+  </script>
 
 </body>
 
