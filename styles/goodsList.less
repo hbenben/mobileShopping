@@ -1,37 +1,89 @@
 @import '_reset.less';
 @import 'common.less';
-.layout{
-  .detailHeader{
+
+.layout {
+  .detailHeader {
     height: 45px;
   }
-  .pyg_content{
+
+  .pyg_content {
     overflow: hidden;
     // padding-top: 45px;
     position: relative;
     flex: 1;
-     .mui-scroll-wrapper {
-       //区域滚动手动设置样式
-       top: 45px;
-       bottom: 10px;
-     }
-     .goods_name{
-       padding: 5px 10px;
-        font-size: 15px;
-     }
-     .goods_price{
-       padding: 10px;
-       font-size: 18px;
-       color: orange;
-     }
+
+    .mui-scroll-wrapper {
+      //区域滚动手动设置样式
+      top: 45px;
+      bottom: 10px;
+    }
+
+    .goods_name {
+      padding: 5px 10px;
+      font-size: 15px;
+    }
+
+    .goods_price {
+      padding: 10px;
+      font-size: 18px;
+      color: orange;
+    }
+
+    .goods_post_intro {
+      >li {
+        border-bottom: 1px solid #aaa;
+        display: flex;
+        padding: 10px;
+        font-size: 13px;
+
+        >span:nth-of-type(1) {
+          flex: 1;
+          color: #aaa;
+        }
+
+        >span:nth-of-type(2) {
+          flex: 4;
+        }
+      }
+    }
+
+    .goods_detail_arg {
+      padding: 0 5px;
+      background-color: #eee;
+
+      >div {
+        >h3 {
+          width: 100%;
+          border-bottom: 1px solid #666;
+          line-height: 40px;
+        }
+
+        >div {
+          display: flex;
+          font-size: 13px;
+          line-height: 30px;
+
+          >span:nth-of-type(1) {
+            flex: 1;
+          }
+
+          >span:nth-of-type(2) {
+            flex: 4;
+          }
+        }
+      }
+    }
 
   }
+
   //底部的样式
-  .shop-footer{
-    .pyg_buy{
+  .shop-footer {
+    .pyg_buy {
       background-color: #f0ad4e;
       color: #fff;
     }
-    .pyg_cart{
+
+    .pyg_cart {
       background-color: #dd524d;
       color: #fff;
     }

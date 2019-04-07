@@ -157,6 +157,39 @@ ul {
   font-size: 18px;
   color: orange;
 }
+.layout .pyg_content .goods_post_intro > li {
+  border-bottom: 1px solid #aaa;
+  display: flex;
+  padding: 10px;
+  font-size: 13px;
+}
+.layout .pyg_content .goods_post_intro > li > span:nth-of-type(1) {
+  flex: 1;
+  color: #aaa;
+}
+.layout .pyg_content .goods_post_intro > li > span:nth-of-type(2) {
+  flex: 4;
+}
+.layout .pyg_content .goods_detail_arg {
+  padding: 0 5px;
+  background-color: #eee;
+}
+.layout .pyg_content .goods_detail_arg > div > h3 {
+  width: 100%;
+  border-bottom: 1px solid #666;
+  line-height: 40px;
+}
+.layout .pyg_content .goods_detail_arg > div > div {
+  display: flex;
+  font-size: 13px;
+  line-height: 30px;
+}
+.layout .pyg_content .goods_detail_arg > div > div > span:nth-of-type(1) {
+  flex: 1;
+}
+.layout .pyg_content .goods_detail_arg > div > div > span:nth-of-type(2) {
+  flex: 4;
+}
 .layout .shop-footer .pyg_buy {
   background-color: #f0ad4e;
   color: #fff;
