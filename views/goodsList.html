@@ -31,6 +31,7 @@
                     <button class="query_btn">搜索</button>
                   </div>
                   <div class="search_list">
+                    <!-- //这里展示搜索的结果 -->
 
                   </div>
                 </div>
@@ -48,7 +49,7 @@
             <div class="mui-scroll">
               <!-- 主界面具体展示内容 -->
               <ul class="goods_wrap">
-               
+
               </ul>
             </div>
           </div>
@@ -106,6 +107,12 @@
       </li>
       {{/each}}
   </script>
+  <!-- 搜索结果展示 -->
+  <script type="text/template" id='searchListTemp'>
+    {{each goods value index}}
+      <a href="./goodsDetail.html?pid={{value.goods_id}}" class="mui-ellipsis">{{value.goods_name}}</a>
+    {{/each}}
+  </script>
 
 
 </body>
@@ -117,7 +124,7 @@
    <a class="mui-icon mui-icon-search mui-pull-right"></a>
  </header> -->
 
-  <!-- <li>
+<!-- <li>
     <a href="javascript:;" class="clearfix">
       <div class="item_left">
         <img src="http://image5.suning.cn/uimg/b2c/newcatentries/0000000000-000000000160455569_1_400x400.jpg" alt="">

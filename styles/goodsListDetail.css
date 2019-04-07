@@ -190,3 +190,11 @@ ul {
   border: none;
   flex: 1;
 }
+.layout .goodsListDetail .search_wrapper .search_list {
+  background-color: #fff;
+}
+.layout .goodsListDetail .search_wrapper .search_list a {
+  display: block;
+  margin: 6px 6px;
+  font-size: 18px;
+}
