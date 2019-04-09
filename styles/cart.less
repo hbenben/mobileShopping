@@ -10,7 +10,7 @@
 
     .mui-scroll-wrapper {
       //区域滚动手动设置样式
-      top: 45px;
+      top: 55px;
       bottom: 10px;
 
 
@@ -51,7 +51,7 @@
 
       // 总价
       .pyg_total_price {
-        margin-top: 20px;
+        margin-top: 10px;
         padding: 10px;
 
         .pyg_total_content {
@@ -88,21 +88,27 @@
               display: flex;
               justify-content: center;
               align-items: center;
-              label{
+
+              label {
                 margin-top: 20px;
               }
             }
+
             // 照片
             .order_img {
               flex: 3;
-              img{
+
+              img {
+                display: block;
                 width: 80%;
               }
             }
+
             // 商品描述
             .order_describe_wrapper {
               flex: 5;
-              .mui-numbox{
+
+              .mui-numbox {
                 margin: 10px 0px;
               }
             }
@@ -110,5 +116,15 @@
         }
       }
     }
+  }
+}
+
+//样式切换
+.eleToggle {
+
+  .pyg_orderDel,
+  .mui-checkbox,
+  .pyg_userNum {
+    display: none;
   }
 }

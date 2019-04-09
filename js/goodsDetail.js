@@ -71,7 +71,7 @@ $(function () {
       $.ajax({
         type: 'post',
         url: 'my/cart/add',
-        data: $.getParameter(location.search),
+        data: {info:JSON.stringify(info)},
         dataType: 'json',
         success: function (result) {
           // alert('请求')

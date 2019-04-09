@@ -12,13 +12,13 @@
   <title>29-品优购</title>
 </head>
 
-<body>
+<body class="eleToggle">
   <div class="layout">
     <!-- 导航栏 -->
     <header id="header" class="mui-bar mui-bar-nav">
       <h1 class="mui-title">购物车</h1>
-      <button class="mui-btn mui-btn-primary mui-btn-outlined mui-pull-left">删除</button>
-      <button class="mui-btn mui-btn-primary mui-btn-outlined mui-pull-right">完成</button>
+      <button class="mui-btn mui-btn-primary mui-btn-outlined mui-pull-left pyg_orderDel">删除</button>
+      <button class="mui-btn mui-btn-primary mui-btn-outlined mui-pull-right cart_adit_btn">编辑</button>
     </header>
     <!-- 区域滚动 -->
     <div class="pyg_content">
@@ -41,7 +41,7 @@
           <div class="pyg_total_price">
             <div>总价</div>
             <div class="pyg_total_content">
-              <div class="total_price">总价<span>￥1499</span></div>
+              <div class="total_price">总价:<span class="listTotal">￥0</span></div>
               <a class="pyg_order" href="#">生成订单</a>
             </div>
           </div>
@@ -50,70 +50,8 @@
             <div>订单</div>
             <div class="order_list">
               <ul>
-                <li>
-                  <!-- 每一个订单,使用mui的复选框 -->
-                  <div class="mui-card">
-                    <!-- 订单复选框按钮 -->
-                    <div class="cart_checked">
-                      <div class="mui-input-row mui-checkbox mui-left">
-                        <label></label>
-                        <input name="checkbox" value="Item 2" type="checkbox" checked="">
-                      </div>
-                    </div>
-
-                    <!-- 照片 -->
-                    <div class="order_img">
-                      <img src="../static/images/goods_thnmp.png" alt="">
-                    </div>
-                    <!-- 商品描述 -->
-                    <div class="order_describe_wrapper ">
-                      <div class="order_goods_name mui-ellipsis-2">
-                        Xiaomi/小米 小米电视4A 55英寸 高配版L55M5-AZ 人工智能语音版 4K超高清网络液晶电视机
-                      </div>
-                      <!-- mui的数字输入框 -->
-                      <div class="mui-numbox" data-numbox-min="1" data-numbox-max="100">
-                        <button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
-                        <input id="test" class="mui-input-numbox" type="number" value="5">
-                        <button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
-                      </div>
-                      <!-- 价格 -->
-                      <div>￥1499</div>
-                    </div>
 
 
-                  </div>
-                </li>
-                <li>
-                  <!-- 每一个订单,使用mui的复选框 -->
-                  <div class="mui-card">
-                    <!-- 订单复选框按钮 -->
-                    <div class="cart_checked">
-                      <div class="mui-input-row mui-checkbox mui-left">
-                        <label></label>
-                        <input name="checkbox" value="Item 2" type="checkbox" checked="">
-                      </div>
-                    </div>
-
-                    <!-- 照片 -->
-                    <div class="order_img">
-                      <img src="../static/images/goods_thnmp.png" alt="">
-                    </div>
-                    <!-- 商品描述 -->
-                    <div class="order_describe_wrapper">
-                      Xiaomi/小米 小米电视4A 55英寸 高配版L55M5-AZ 人工智能语音版 4K超高清网络液晶电视机
-                      <!-- mui的数字输入框 -->
-                      <div class="mui-numbox" data-numbox-min="1" data-numbox-max="100">
-                        <button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
-                        <input id="test" class="mui-input-numbox" type="number" value="5">
-                        <button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
-                      </div>
-                      <!-- 价格 -->
-                      <div>￥1499</div>
-                    </div>
-
-
-                  </div>
-                </li>
               </ul>
             </div>
           </div>
@@ -122,13 +60,13 @@
     </div>
     <div class="shop-footer">
       <nav class="mui-bar mui-bar-tab">
-        <a class="mui-tab-item" href="#">
-          <span class="mui-icon mui-icon-weixin"></span>
-          <span class="mui-tab-label">客服</span>
+        <a class="mui-tab-item" href="../index.html">
+          <span class="mui-icon mui-icon-home"></span>
+          <span class="mui-tab-label">首页</span>
         </a>
-        <a class="mui-tab-item " href="#">
-          <span class="mui-icon mui-icon-phone"></span>
-          <span class="mui-tab-label">联系</span>
+        <a class="mui-tab-item " href="./category.html">
+          <span class="mui-icon mui-icon-bars"></span>
+          <span class="mui-tab-label">分类</span>
         </a>
         <a class="mui-tab-item" href="#tabbar-with-contact">
           <span class="mui-icon-extra mui-icon-extra-cart"></span>
@@ -147,7 +85,45 @@
   <script src="../lib/arttemplate/template-web.js"></script>
   <script src="../lib/iscroll/iscroll.js"></script>
   <script src="../js/common.js"></script>
+  <script type='text/template' id="cartListTemp">
+    {{each list value index}}
+    <li class="order_list_wrapper" data-obj="{{value}}">
+      <!-- 每一个订单,使用mui的复选框 -->
+      <div class="mui-card">
+        <!-- 订单复选框按钮 -->
+        <div class="cart_checked">
+          <div class="mui-input-row mui-checkbox mui-left">
+            <label></label>
+            <input name="checkbox" value="Item 2" type="checkbox" checked="">
+          </div>
+        </div>
+
+        <!-- 照片 -->
+        <div class="order_img">
+          <img src="{{value.goods_small_logo}}" alt="">
+        </div>
+        <!-- 商品描述 -->
+        <div class="order_describe_wrapper ">
+          <div class="order_goods_name mui-ellipsis-2">
+            {{value.goods_name}}
+          </div>
+          <!-- mui的数字输入框 -->
+          <div class="mui-numbox pyg_userNum" data-numbox-min="1" data-numbox-max="100">
+            <button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+            <input id="test" class="mui-input-numbox" type="number" value="1">
+            <button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+          </div>
+          <!-- 价格 -->
+          <div>￥{{value.goods_price}}</div>
+        </div>
+
+
+      </div>
+    </li>
+    {{/each}}
+  </script>
   <script src="../js/cart.js"></script>
+
 </body>
 
 </html>
