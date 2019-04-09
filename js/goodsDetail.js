@@ -59,7 +59,7 @@ $(function () {
     
 
     if (!mytoken) {
-      console.log(11111); 
+      // console.log(11111); 
       
       //将当前路径保存起来，后面登陆成功之后要进行跳转页面，从这里先拿到
       sessionStorage.setItem('redirectUrl', location.href);
@@ -88,8 +88,18 @@ $(function () {
           }
           // 4.如果有效，那么就弹出提示：添加成功，是否查看购物车
           else {
-            // 提示
-            console.log('ok')
+            // 这里是登录成功之后，添加到购物车
+            // console.log('ok')
+            // 消息弹框
+            mui.confirm('添加成功，是否查看购物车？', '温馨提示', ['跳转', '取消'], function (e) {
+              // index代表当前按钮的索引，索引从0开始
+              if (e.index == 0) {
+                // 跳转到购物车页面
+                location.href = 'cart.html'
+              } else {
+
+              }
+            })
           }
         }
       })

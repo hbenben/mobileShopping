@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../lib/mui/css/mui.min.css">
+  <link rel="stylesheet" href="../lib/mui/css/muie.css">
+  <link rel="stylesheet" href="../lib/fontawesome/css/font-awesome.css">
+  <link rel="stylesheet" href="../styles/cart.css">
+  <title>29-品优购</title>
+</head>
+
+<body>
+  <div class="layout">
+    <!-- 导航栏 -->
+    <header id="header" class="mui-bar mui-bar-nav">
+      <h1 class="mui-title">购物车</h1>
+      <button class="mui-btn mui-btn-primary mui-btn-outlined mui-pull-left">删除</button>
+      <button class="mui-btn mui-btn-primary mui-btn-outlined mui-pull-right">完成</button>
+    </header>
+    <!-- 区域滚动 -->
+    <div class="pyg_content">
+      <div class="mui-scroll-wrapper">
+        <div class="mui-scroll">
+          <!-- 配送地址 -->
+          <div class="pyg_add">
+            <div>配送地址</div>
+            <div class="pyg_add_local">
+              <div class="add_left">
+                <span class="mui-icon mui-icon-location"></span>
+              </div>
+              <div class="add_right">
+                <div>默认地址</div>
+                <div>中国台湾省</div>
+              </div>
+            </div>
+          </div>
+          <!-- 总价 -->
+          <div class="pyg_total_price">
+            <div>总价</div>
+            <div class="pyg_total_content">
+              <div class="total_price">总价<span>￥1499</span></div>
+              <a class="pyg_order" href="#">生成订单</a>
+            </div>
+          </div>
+          <!-- 订单 -->
+          <div class="pyg_order_wrapper">
+            <div>订单</div>
+            <div class="order_list">
+              <ul>
+                <li>
+                  <!-- 每一个订单,使用mui的复选框 -->
+                  <div class="mui-card">
+                    <!-- 订单复选框按钮 -->
+                    <div class="cart_checked">
+                      <div class="mui-input-row mui-checkbox mui-left">
+                        <label></label>
+                        <input name="checkbox" value="Item 2" type="checkbox" checked="">
+                      </div>
+                    </div>
+
+                    <!-- 照片 -->
+                    <div class="order_img">
+                      <img src="../static/images/goods_thnmp.png" alt="">
+                    </div>
+                    <!-- 商品描述 -->
+                    <div class="order_describe_wrapper ">
+                      <div class="order_goods_name mui-ellipsis-2">
+                        Xiaomi/小米 小米电视4A 55英寸 高配版L55M5-AZ 人工智能语音版 4K超高清网络液晶电视机
+                      </div>
+                      <!-- mui的数字输入框 -->
+                      <div class="mui-numbox" data-numbox-min="1" data-numbox-max="100">
+                        <button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+                        <input id="test" class="mui-input-numbox" type="number" value="5">
+                        <button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+                      </div>
+                      <!-- 价格 -->
+                      <div>￥1499</div>
+                    </div>
+
+
+                  </div>
+                </li>
+                <li>
+                  <!-- 每一个订单,使用mui的复选框 -->
+                  <div class="mui-card">
+                    <!-- 订单复选框按钮 -->
+                    <div class="cart_checked">
+                      <div class="mui-input-row mui-checkbox mui-left">
+                        <label></label>
+                        <input name="checkbox" value="Item 2" type="checkbox" checked="">
+                      </div>
+                    </div>
+
+                    <!-- 照片 -->
+                    <div class="order_img">
+                      <img src="../static/images/goods_thnmp.png" alt="">
+                    </div>
+                    <!-- 商品描述 -->
+                    <div class="order_describe_wrapper">
+                      Xiaomi/小米 小米电视4A 55英寸 高配版L55M5-AZ 人工智能语音版 4K超高清网络液晶电视机
+                      <!-- mui的数字输入框 -->
+                      <div class="mui-numbox" data-numbox-min="1" data-numbox-max="100">
+                        <button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+                        <input id="test" class="mui-input-numbox" type="number" value="5">
+                        <button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+                      </div>
+                      <!-- 价格 -->
+                      <div>￥1499</div>
+                    </div>
+
+
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="shop-footer">
+      <nav class="mui-bar mui-bar-tab">
+        <a class="mui-tab-item" href="#">
+          <span class="mui-icon mui-icon-weixin"></span>
+          <span class="mui-tab-label">客服</span>
+        </a>
+        <a class="mui-tab-item " href="#">
+          <span class="mui-icon mui-icon-phone"></span>
+          <span class="mui-tab-label">联系</span>
+        </a>
+        <a class="mui-tab-item" href="#tabbar-with-contact">
+          <span class="mui-icon-extra mui-icon-extra-cart"></span>
+          <div class="mui-tab-label" style='font-size: 12px'>购物车</div>
+        </a>
+        <a class="mui-tab-item" href="#tabbar-with-map">
+          <span class="mui-icon mui-icon-contact"></span>
+          <span class="mui-tab-label">我的</span>
+        </a>
+      </nav>
+    </div>
+  </div>
+
+  <script src="../lib/mui/js/mui.min.js"></script>
+  <script src="../lib/zepto/zepto.js"></script>
+  <script src="../lib/arttemplate/template-web.js"></script>
+  <script src="../lib/iscroll/iscroll.js"></script>
+  <script src="../js/common.js"></script>
+  <script src="../js/cart.js"></script>
+</body>
+
+</html>
