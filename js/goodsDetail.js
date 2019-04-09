@@ -37,7 +37,7 @@ $(function () {
       info.goods_price = result.data.goods_price
       info.goods_small_logo = result.data.goods_small_logo
       info.goods_weight = result.data.goods_weight
-      console.log(result);
+      // console.log(result);
       var html = template('goodsDetailTemp', result.data);
       $('.mui-scroll').html(html)
 
@@ -54,11 +54,16 @@ $(function () {
   $('.pyg_cart').on('tap', function () {
     // 1.判断是否有token，如果没有，则重定向到登陆页面
     // 约定使用sessionStorage存储
-    var mytoken = sessionStorage.getItem('pyg_token')
+    var mytoken = sessionStorage.getItem('pyg_token');
+    console.log(mytoken);
+    
 
     if (!mytoken) {
+      console.log(11111); 
+      
       //将当前路径保存起来，后面登陆成功之后要进行跳转页面，从这里先拿到
-      sessionStorage.setItem('redirectionUrl', location.href);
+      sessionStorage.setItem('redirectUrl', location.href);
+      location.href='./login.html?directUrl'+location.href;
       // location.href = './login.html?redirectUrl=' + escape(location.href)
     }
     // 2.如果有token,那么就发送请求
@@ -66,15 +71,16 @@ $(function () {
       $.ajax({
         type: 'post',
         url: 'my/cart/add',
-        data: JSON.stringify(info),
+        data: $.getParameter(location.search),
         dataType: 'json',
         success: function (result) {
+          // alert('请求')
           console.log(11111111)
           // console.log(location.href);
           
-          // 3.接收返回结果，如果是token过期，则重新登陆--重定向到登陆页
+          // 3.接收返回结果，如果是token过期，则重新登陆--重定向到登陆页，401是服务器返回的状态码，就是过期的状态码
           if (result.meta.status === 401) {
-            sessionStorage.setItem('redirectionUrl', location.href)
+            sessionStorage.setItem('redirectUrl', location.href)
             location.href='./login.html'
 
             // 通过url编码来实现href的传递

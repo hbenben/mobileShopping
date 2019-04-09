@@ -1,4 +1,6 @@
 $(function () {
+  // console.log('拦截器');
+  
   // zepto里面的拦截器
   //使用zepto里面的ajax中的beforeSend来实现路由的拼接
   // 定义一个前缀相同的路由
@@ -9,11 +11,11 @@ $(function () {
     // 可以查看每个ajax中的url请求路径  ，实现url的拼接
     // console.log(obj);
     obj.url = baseURL + obj.url;
-    // 在访问私有路径的时候，手动的将token值传递给服务器，要判断一下是否访问素有路径
-    // 值如何传递：通过请求头的方式将token值传递给服务器
-    if (obj.url.indexOf('/my/') != -1) {
-      xhr.setRequestHeader('Authorization', sessionStorage.getItem('pyg_token'))
-    }
+     // 在访问私有路径的时候，手动的将token值传递给服务器
+     // 值如何传递：通过请求头的方式将token值传递给服务器
+     if (obj.url.indexOf('/my/') != -1) {
+       xhr.setRequestHeader('Authorization', sessionStorage.getItem('pyg_token'))
+     }
 
   }
 

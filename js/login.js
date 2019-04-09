@@ -18,7 +18,7 @@ $(function () {
     if (obj.password.length < 6) {
       mui.toast('密码长度小于6位');
       return false;
-    }
+    } 
     //发送ajax请求
     $.ajax({
       type: 'post',
@@ -26,17 +26,18 @@ $(function () {
       data: obj,
       dataType: 'json', 
       success: function (result) {
+        alert('跳转成功')
         console.log(result);
         //登录成功之后获取对应的token值，要注意，这个是私密API，路径不一样的
         if(result.meta.status==200){
           //登录成功，然后将当前的token值存储到本地
           sessionStorage.setItem('pyg_token',result.data.token);
           //登陆成功，获取当前的token值后，还要进行页面跳转
-          var re=sessionStorage.getItem('redirectionUrl');
+          var re=sessionStorage.getItem('redirectUrl');
           if(re){
             location.href=re;
           }else{
-            location.href='/index.html'
+            location.href='../index.html'
           }
         }else{
           mui.toast(result.meta.msg);
