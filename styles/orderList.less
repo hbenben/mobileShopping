@@ -1,0 +1,23 @@
+@import '_reset.less';
+@import 'common.less';
+
+.layout {
+  .pyg_content {
+    position: relative;
+    overflow: hidden;
+    flex: 1;
+    .mui-scroll-wrapper {
+      //区域滚动手动设置样式
+      top: 45px;
+      bottom: 10px;
+      #segmentedControl{
+        background-color: #fff;
+        margin-bottom: 10px;
+      }
+    }
+    //订单内容
+    .order_list_content{
+      padding: 10px;
+    }
+  }
+}

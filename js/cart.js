@@ -139,6 +139,47 @@ $(function () {
   })
 
   //生成订单
-
+  $('.pyg_order').on('tap',function(){
+    //重要的是要跟后台数据接口,名字要相同
+    var order={
+      "order_price":total,
+      "consignee_addr":$('.user_address').text(),
+      "goods":[]
+    }
+    //先获取你提交到购物车中，商品的数据
+    var allOrders = $('.order_list_wrapper');
+    // console.log(allOrders);
+    allOrders.each(function(index,value){
+      var tempObj={};
+      var orderObj=$(value).data('obj');
+      //通过自定义的属性来获取信息
+      // console.log(orderObj);
+      tempObj.goods_id=orderObj.goods_id;
+      tempObj.goods_number=orderObj.amount;
+      tempObj.goods_price=orderObj.goods_price;
+      //然后将数据追加到，需要提交给后台的对象中
+      order.goods.push(tempObj)
+      
+    })
+    // console.log(order);
+    // 发起ajax请求，将数据提交过去
+    $.ajax({
+      type:'post',
+      url: 'my/orders/create',
+      data:order,
+      dataType:'json',
+      success:function(result){
+        // console.log(result);
+        if(result.meta.status==200){
+          mui.toast('生成订单成功');
+          setTimeout(() => {
+             location.href = './orderList.html';
+          }, 1000);
+         
+        }
+      }
+    })
+    
+  })
 
 })

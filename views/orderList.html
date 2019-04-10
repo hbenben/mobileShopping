@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../lib/mui/css/mui.min.css">
+  <link rel="stylesheet" href="../lib/mui/css/muie.css">
+  <link rel="stylesheet" href="../lib/fontawesome/css/font-awesome.css">
+  <link rel="stylesheet" href="../lib/mui/css/mui.picker.css">
+  <link rel="stylesheet" href="../lib/mui/css/mui.poppicker.css">
+  <link rel="stylesheet" href="../styles/orderList.css">
+  <title>29-品优购</title>
+</head>
+
+<body>
+  <div class="layout">
+    <!-- 头部 -->
+    <header id="header" class="mui-bar mui-bar-nav">
+      <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+      <h1 class="mui-title">订单列表</h1>
+    </header>
+    <!-- 订单内容 -->
+      <div class="pyg_content">
+        <div class="mui-scroll-wrapper">
+          <div class="mui-scroll">
+            <div class="mui-content">
+              <!-- 标题 -->
+              <div>
+                <div id="segmentedControl" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-primary">
+                  <a class="mui-control-item mui-active" href="#item1">
+                    全部
+                  </a>
+                  <a class="mui-control-item" href="#item2">
+                    待付款
+                  </a>
+                  <a class="mui-control-item" href="#item3">
+                    待发货
+                  </a>
+                </div>
+              </div>
+              <!-- 内容 -->
+              <div class="order_list_content">
+                <div id="item1" class="mui-control-content mui-active">
+                  <ul class="mui-table-view">
+                    <li class="mui-table-view-cell">
+                      <div class="mui-row">
+                        <div class="mui-col-xs-9">第1个选项卡子项-1</div>
+                        <div class="mui-col-xs-3">￥1234</div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div id="item2" class="mui-control-content">
+                  <ul class="mui-table-view">
+                    <li class="mui-table-view-cell">
+                      <div class="mui-row">
+                        <div class="mui-col-xs-9">第2个选项卡子项-1</div>
+                        <div class="mui-col-xs-3">￥1234</div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div id="item3" class="mui-control-content">
+                  <ul class="mui-table-view">
+                    <li class="mui-table-view-cell">
+                      <div class="mui-row">
+                        <div class="mui-col-xs-9">第3个选项卡子项-1</div>
+                        <div class="mui-col-xs-3">￥1234</div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 底部 -->
+    <div class="shop-footer">
+      <nav class="mui-bar mui-bar-tab">
+        <a class="mui-tab-item" href="../index.html">
+          <span class="mui-icon mui-icon-home"></span>
+          <span class="mui-tab-label">首页</span>
+        </a>
+        <a class="mui-tab-item " href="./category.html">
+          <span class="mui-icon mui-icon-bars"></span>
+          <span class="mui-tab-label">分类</span>
+        </a>
+        <a class="mui-tab-item" href="#tabbar-with-contact">
+          <span class="mui-icon-extra mui-icon-extra-cart"></span>
+          <div class="mui-tab-label" style='font-size: 12px'>购物车</div>
+        </a>
+        <a class="mui-tab-item" href="#tabbar-with-map">
+          <span class="mui-icon mui-icon-contact"></span>
+          <span class="mui-tab-label">我的</span>
+        </a>
+      </nav>
+    </div>
+  </div>
+
+  <script src="../lib/mui/js/mui.min.js"></script>
+  <script src="../lib/zepto/zepto.js"></script>
+  <script src="../lib/arttemplate/template-web.js"></script>
+  <script src="../lib/iscroll/iscroll.js"></script>
+  <script src="../js/common.js"></script>
+
+
+</body>
+
+</html>
