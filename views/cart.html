@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="../lib/mui/css/mui.min.css">
   <link rel="stylesheet" href="../lib/mui/css/muie.css">
   <link rel="stylesheet" href="../lib/fontawesome/css/font-awesome.css">
+  <link rel="stylesheet" href="../lib/mui/css/mui.picker.css">
+  <link rel="stylesheet" href="../lib/mui/css/mui.poppicker.css">
   <link rel="stylesheet" href="../styles/cart.css">
   <title>29-品优购</title>
 </head>
@@ -33,9 +35,9 @@
               </div>
               <div class="add_right">
                 <div>默认地址</div>
-                <div>中国台湾省</div>
+                <div class="user_address">中国台湾省台北市</div>
               </div>
-              <div>
+              <div class="selectAdd mui-btn" >
                 添加地址
               </div>
             </div>
@@ -88,6 +90,9 @@
   <script src="../lib/arttemplate/template-web.js"></script>
   <script src="../lib/iscroll/iscroll.js"></script>
   <script src="../js/common.js"></script>
+  <script src="../lib/mui/js/mui.picker.js"></script>
+  <script src="../lib/mui/js/mui.poppicker.js"></script>
+  <script src="../data/citys.js"></script>
   <script type='text/template' id="cartListTemp">
     {{each list value index}}
     <li class="order_list_wrapper" data-obj="{{value}}">

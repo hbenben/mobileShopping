@@ -47,6 +47,7 @@ $(function () {
   })
   //计算总价
   var total
+
   function calcTotalPrice() {
     // 注意这个方法必须要放在渲染数据完之后，才能进行获取动态数据，不然获取不到
     total = 0;
@@ -103,7 +104,7 @@ $(function () {
         'infos': JSON.stringify(list_obj)
       }, //注意后台的数据格式是json字符串
       success: function (result) {
-        console.log(result);
+        // console.log(result);
         init()
       }
     })
@@ -114,9 +115,30 @@ $(function () {
     //先要找到保留的商品的信息
     // 获取没有被选择的复选框，使用zepto中的not选择器
     var list = $('.order_list').find("[type='checkbox']").not(':checked').parents('.order_list_wrapper');
-    console.log(list);
+    // console.log(list);
     syncCart(list);
     init();
   })
+  // 地址的实现
+  $('.selectAdd').on('tap', function () {
+    //使用mui里面的picker进行地址选择，pipcker组件
+    //创建对象，设置为三级联动
+    var picker = new mui.PopPicker({
+      layer: 3
+    })
+    //给picker对象添加数据，添加的数据只能是数组
+    picker.setData(data)
+    //显示picker，参数是一个回调函数，在回调函数中存在一个参数
+    picker.show(function(item){
+      //这个就是你选择点击之后的结果
+      console.log(item);
+      //然后将选择的结果赋值到地址栏之中
+      $('.user_address').text(item[0].text + '-' + item[1].text + '-' + item[2].text)
+      
+    })
+  })
+
+  //生成订单
+
 
 })
